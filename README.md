@@ -1,5 +1,5 @@
 
-# [nOps Auto Remediation](https://app.nops.io/signup/) Auto Remediation
+# [nOps Auto Remediation](https://app.nops.io/signup/)
 
 Remediation Engine is actively maintained by nOps Team. 
 
@@ -15,6 +15,7 @@ This serverless application deploys a Lambda function to your AWS account that e
 
 ## Policy Changes
 This app creates a lamba execution role with the following permissions. 
+
 | Service    | Policy                     |
 |------------|----------------------------|
 | - s3       | PutBucketVersioning        |
