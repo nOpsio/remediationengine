@@ -1,0 +1,80 @@
+AWSTemplateFormatVersion : 2010-09-09
+Transform: AWS::Serverless-2016-10-31
+
+Resources:
+  SNSTopicIn:
+    Type: "AWS::SNS::Topic"
+    Properties: 
+        TopicName: "nOpsRemediationListner"
+
+  SNSTopicInPolicy:
+    Type: AWS::SNS::TopicPolicy
+    Properties:
+      PolicyDocument:
+        Id: SNSTopicIn
+        Version: '2012-10-17'
+        Statement:
+        - Sid: SNSTopicIn
+          Effect: Allow
+          Principal:
+            AWS: 'arn:aws:iam::103089546932:root'
+          Action: sns:Publish
+          Resource: !Ref SNSTopicIn
+      Topics:
+      - !Ref SNSTopicIn
+
+  SNSOutputTopic:
+    Type: "AWS::SNS::Topic"
+    Properties: 
+      DisplayName: 'nOps Remidiation Results Topic'
+      TopicName: 'nOpsRemidiationResultTopic'
+      Subscription: 
+        # -
+        #   Endpoint: arn:aws:lambda:us-east-1:103089546932:function:SnsSlackMesasge
+        #   Protocol: lambda
+      Subscription: 
+        -
+          Endpoint: 'gagan.a@live.com'
+          Protocol: email-json
+          
+  RemdiationLambda:
+    Type: "AWS::Serverless::Function"
+    Properties:
+      FunctionName: nOpsRemdiationPackage
+      Description: 'Remidation for WAR Report'
+      Runtime: nodejs8.10
+      Timeout: 120 
+      Handler: index.handler
+      Policies:
+       - Version: '2012-10-17' 
+         Statement:
+           - Effect: Allow
+             Action:
+               - s3:PutBucketVersioning
+               - s3:PutEncryptionConfiguration
+               - s3:PutBucketAcl
+               - s3:PutBucketPolicy
+               - s3:PutBucketLogging
+               - sns:Publish 
+               - ec2:RevokeSecurityGroupEgress
+               - ec2:RevokeSecurityGroupIngress
+               - ec2:CreateTags
+               - ec2:CreateSnapshot
+               - dynamodb:CreateBackup
+             Resource: '*'
+      Environment:
+        Variables:
+          SNS_TOPIC_ARN: !Ref SNSOutputTopic
+      Events:
+        nOpsRemiditaion:
+          Type: SNS
+          Properties:
+            Topic: !Ref SNSTopicIn
+
+Outputs:
+  RemediationTopicARN:
+    Description: 'SNS IN'
+    Value: !Ref SNSTopicIn
+  RemidiationOutputTopicARN:
+    Description: 'SNS OUT'
+    Value: !Ref SNSOutputTopic
