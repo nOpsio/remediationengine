@@ -1,5 +1,5 @@
 
-# [nOps Auto-Remediation](https://app.nops.io/signup/)
+# nOps Auto-Remediation
 
 nOps Auto-Remediation Engine is actively maintained by the team at nOps.
 
