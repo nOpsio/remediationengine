@@ -5,7 +5,7 @@ Resources:
   SNSTopicIn:
     Type: "AWS::SNS::Topic"
     Properties: 
-        TopicName: "nOpsRemediationListner"
+        TopicName: "nOpsAutoRemediationListner"
 
   SNSTopicInPolicy:
     Type: AWS::SNS::TopicPolicy
@@ -17,7 +17,7 @@ Resources:
         - Sid: SNSTopicIn
           Effect: Allow
           Principal:
-            AWS: 'arn:aws:iam::103089546932:root'
+            AWS: 'arn:aws:iam::202279780353:root'
           Action: sns:Publish
           Resource: !Ref SNSTopicIn
       Topics:
@@ -30,7 +30,7 @@ Resources:
       TopicName: 'nOpsRemidiationResultTopic'
       Subscription: 
         # -
-        #   Endpoint: arn:aws:lambda:us-east-1:103089546932:function:SnsSlackMesasge
+        #   Endpoint: arn:aws:lambda:us-east-1:202279780353:function:SnsSlackMesasge
         #   Protocol: lambda
       Subscription: 
         -
@@ -40,7 +40,7 @@ Resources:
   RemdiationLambda:
     Type: "AWS::Serverless::Function"
     Properties:
-      FunctionName: nOpsRemdiationPackage
+      FunctionName: nOpsAutoRemdiationPackage
       Description: 'Remidation for WAR Report'
       Runtime: nodejs8.10
       Timeout: 120 

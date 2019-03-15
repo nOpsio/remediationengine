@@ -18,7 +18,7 @@ class SNSPushService {
         var publishTextPromise = new AWS.SNS({ apiVersion: '2010-03-31' }).publish(params).promise();
 
         // Handle promise's fulfilled/rejected states
-        //context.callbackWaitsForEmptyEventLoop = false;
+        //
 
         publishTextPromise.then(
             function (data) {

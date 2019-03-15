@@ -1,9 +1,10 @@
 
-# [nOps Auto Remediation](https://app.nops.io/signup/)
+# [nOps Auto-Remediation](https://app.nops.io/signup/)
 
-Remediation Engine is actively maintained by nOps Team. 
+nOps Auto-Remediation Engine is actively maintained by the team at nOps.
 
-This serverless application deploys a Lambda function to your AWS account that executes the  following auto remediation methods- You can easily deploy the pre-built app from AWS Serverless Reposity here
+This serverless application deploys a Lambda function and two SNS topic to your AWS account that executes the following auto-remediation methods. You can easily deploy the pre-built app from AWS Serverless Repository here.
+
 
 | Remediations                                                    |
 |---------------------------                                      |
@@ -35,5 +36,5 @@ This app creates a lamba execution role with the following permissions.
 
 
 ##  Easy Installation
- Go to the official AWS Serverless Repository Application [nOps Remediation Engine](https://serverlessrepo.aws.amazon.com/applications/)  and follow the instructions to install the application
+ Go to the official AWS Serverless Repository Application [nOps Auto-Remediation Engine](https://serverlessrepo.aws.amazon.com/applications/)  and follow the instructions to install the application
 

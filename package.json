@@ -1,12 +1,12 @@
 {
-  "name": "nops-remedy",
+  "name": "nops-auto-remediation",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "package": "aws cloudformation package --template-file template.yaml --output-template-file output.yaml --s3-bucket nopsremediationwest2",
-    "deploy": "aws cloudformation deploy --template-file output.yaml --stack-name nops-remedy --capabilities CAPABILITY_IAM --parameter-overrides EmailID=gagan.a@live.com",
+    "package": "aws cloudformation package --template-file template.yaml --output-template-file output.yaml --s3-bucket nops-auto-remediation-east1",
+    "deploy": "aws cloudformation deploy --template-file output.yaml --stack-name nOps-Auto-Remediation-Package --capabilities CAPABILITY_IAM --parameter-overrides EmailID=gagan.a@live.com",
     "push": "npm run package && npm run deploy"
   },
-  "author": "Gagan"
+  "author": "nOps"
 }
