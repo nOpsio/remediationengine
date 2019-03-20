@@ -4,9 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "package": "aws cloudformation package --template-file template.yaml --output-template-file output.yaml --s3-bucket nops-auto-remediation-east1",
-    "deploy": "aws cloudformation deploy --template-file output.yaml --stack-name nOps-Auto-Remediation-Package --capabilities CAPABILITY_IAM --parameter-overrides EmailID=gagan.a@live.com",
+    "package": "aws cloudformation package --template-file template.yaml --output-template-file output.yaml --s3-bucket nops-auto-remediation-dist-east1",
+    "deploy": "aws cloudformation deploy --template-file output.yaml --stack-name nOps-Auto-Remediation-Package --capabilities CAPABILITY_IAM",
     "push": "npm run package && npm run deploy"
+  },
+  "config": {
+    "sns_name": "arn:aws:sns:us-east-1:202279780353:nOps-Auto-Remediation-FeedBack-Package-Topic-TYPGRLHWWKX"
   },
   "author": "nOps"
 }

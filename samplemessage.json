@@ -1,12 +1,12 @@
 {
     "ComplianceType": "WAR",
     "ReportTime": "2019-03-09",
-    "Type": "S3Bucket",
+    "Type": "Verify",
     "RuleNo": "S3001",
     "Metadata": {
         "S3_BUCKET_ARN": "arn:aws:s3:::applesoft.com",
         "Description": "encrypt bucket"
     },
-    "AWSaccountId": "103089546932",
+    "AWSaccountId": "202279780353",
     "nOpsUserID": "nOpsUserID"
 }

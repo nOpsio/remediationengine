@@ -32,7 +32,7 @@ This app creates a lamba execution role with the following permissions.
 | - dynamodb | CreateBackup               |
 
 ## Architecture 
-![nOps Auto Remediation](/img/serverlessrepo%20-internal.png)
+![nOps Auto Remediation](https://raw.githubusercontent.com/nOpsio/remediationengine/master/img/serverlessrepo%20-internal.png)
 
 
 ##  Easy Installation

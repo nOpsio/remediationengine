@@ -36,6 +36,21 @@ Resources:
         -
           Endpoint: 'gagan.a@live.com'
           Protocol: email-json
+  SNSTopicOutPolicy:
+    Type: AWS::SNS::TopicPolicy
+    Properties:
+      PolicyDocument:
+        Id: SNSOutputTopic
+        Version: '2012-10-17'
+        Statement:
+        - Sid: SNSOutputTopic
+          Effect: Allow
+          Principal:
+            AWS: '202279780353'
+          Action: sns:Subscribe
+          Resource: !Ref SNSOutputTopic
+      Topics:
+      - !Ref SNSOutputTopic
           
   RemdiationLambda:
     Type: "AWS::Serverless::Function"
