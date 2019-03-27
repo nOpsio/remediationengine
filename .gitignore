@@ -1,4 +1,5 @@
 .node_modules
+tags
 npm_debug.log
 .vscode
 .idea
