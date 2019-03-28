@@ -21,15 +21,11 @@ This app creates a lamba execution role with the following permissions.
 |------------|----------------------------|
 | - s3       | PutBucketVersioning        |
 | - s3       | PutEncryptionConfiguration |
-| - s3       | PutBucketAcl               |
-| - s3       | PutBucketPolicy            |
-| - s3       | PutBucketLogging           |
+| - s3       | List*                         |
 | - sns      | Publish                    |
-| - ec2      | RevokeSecurityGroupEgress  |
-| - ec2      | RevokeSecurityGroupIngress |
-| - ec2      | CreateTags                 |
-| - ec2      | CreateSnapshot             |
-| - dynamodb | CreateBackup               |
+| - cloudformation      | DescribeStacks  |
+| - cloudformation      | ListStackResources |
+
 
 ## Architecture 
 ![nOps Auto Remediation](https://raw.githubusercontent.com/nOpsio/remediationengine/master/img/serverlessrepo%20-internal.png)

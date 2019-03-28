@@ -63,17 +63,6 @@ Resources:
                 Action:
                   - cloudformation:DescribeStacks
                   - cloudformation:ListStackResources
-                  - dynamodb:CreateBackup
-                  - ec2:CreateSnapshot
-                  - ec2:CreateTags
-                  - ec2:RevokeSecurityGroupEgress
-                  - ec2:RevokeSecurityGroupIngress
-                  - logs:CreateLogGroup
-                  - logs:CreateLogStream
-                  - logs:PutLogEvents
-                  - s3:PutBucketAcl
-                  - s3:PutBucketLogging
-                  - s3:PutBucketPolicy
                   - s3:PutBucketVersioning
                   - s3:PutEncryptionConfiguration
                   - s3:List*
