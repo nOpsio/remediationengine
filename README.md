@@ -3,8 +3,7 @@
 
 nOps Auto-Remediation Engine is actively maintained by the team at nOps.
 
-This serverless application deploys a Lambda function and two SNS topic to your AWS account that executes the following auto-remediation methods. You can easily deploy the pre-built app from AWS Serverless Repository here.
-
+This serverless application deploys a Lambda function and one SNS topic to your AWS account that executes the following auto-remediation methods. 
 
 | Remediations                                                    |
 |---------------------------                                      |
